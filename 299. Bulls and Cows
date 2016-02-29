@@ -1,0 +1,34 @@
+class Solution(object):
+    def getHint(self, secret, guess):
+        bullst=0
+        sum=0
+        gl=list(guess)
+        sl=list(secret)
+        for i in range(len(secret)):
+            if secret[i]==guess[i]:
+                bullst+=1
+        for i in range(len(secret)):
+            if sl[i] in gl:
+                gl.remove(sl[i])
+                sum+=1
+        return  str(bullst) +'A'+str(sum-bullst)+'B'
+        
+class Solution(object):
+    def getHint(self, secret, guess):
+        """
+        :type secret: str
+        :type guess: str
+        :rtype: str
+        """
+        bull = sum(map(operator.eq, secret, guess))
+        sa = collections.Counter(secret)
+        sb = collections.Counter(guess)
+        cow = sum((sa & sb).values()) - bull
+        return str(bull) + 'A' + str(cow) + 'B'
+        
+def getHint(self, secret, guess):
+    bulls = sum(map(operator.eq, secret, guess))
+    both = sum(min(secret.count(x), guess.count(x)) for x in '0123456789')
+    return '%dA%dB' % (bulls, both - bulls        
+        
+        
