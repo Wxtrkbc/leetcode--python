@@ -1,0 +1,6 @@
+class Solution(object):
+    def getRow(self, rowIndex):
+        l=[1]
+        for j in range(rowIndex):
+            l[::]=[1]+[l[i]+l[i+1] for i in range(len(l)-1)]+[1]
+        return(l)
