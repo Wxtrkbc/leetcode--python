@@ -1,0 +1,11 @@
+class Solution(object):
+    def reverse(self, x):
+        if x>0:
+        	sign=1
+        else:
+        	sign=-1
+        r= sign*int(str(abs(x))[::-1])
+        if r>2147483647 or r<-2147483647:
+            return 0
+        else:
+            return r
