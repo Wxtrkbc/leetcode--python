@@ -1,0 +1,16 @@
+class Solution:
+    def MyAtoi(self, str):
+        str = str.strip()
+        newStr=[]
+        for i in range(len(str)):
+        	if '0'<=str[i]<='9' or (str[i] in ('+','-')and i ==0):
+        		newStr.append(str[i])
+        	else:
+        		break
+        if newStr in ([],['+'],['-']):
+        	return 0
+        rStr=int(''.join(newStr))
+        if rStr>2147483647 or rStr<-2147483648:
+        	return 0
+        else:
+        	return rStr
