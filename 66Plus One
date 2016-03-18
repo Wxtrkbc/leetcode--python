@@ -1,0 +1,10 @@
+class Solution(object):
+    def plusOne(self, digits):
+        str1=''
+        L=[]
+        for i in digits:
+            str1=str1+str(i)
+        str2=str(int(str1)+1)
+        for k in str2:
+            L.append(int(k))
+        return L
