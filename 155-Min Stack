@@ -1,0 +1,39 @@
+class MinStack(object):
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.list = []
+
+
+    def push(self, x):
+        """
+        :type x: int
+        :rtype: void
+        """
+        if not self.list:
+            self.list.append((x, x))              # 插入值，和最小值
+        else:
+            self.list.append((x, min(x,self.list[-1][1])))
+
+
+    def pop(self):
+        """
+        :rtype: void
+        """
+        if len(self.list) > 0:
+            self.list.pop()
+
+
+    def top(self):
+        """
+        :rtype: int
+        """
+        return self.list[-1][0]
+
+    def getMin(self):
+        """
+        :rtype: int
+        """
+        return self.list[-1][1]
