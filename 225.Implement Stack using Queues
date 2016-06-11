@@ -1,0 +1,40 @@
+# 56 ms
+from collections import deque
+
+
+class Stack(object):
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.stack = deque([])
+
+    def push(self, x):
+        """
+        :type x: int
+        :rtype: nothing
+        """
+        self.stack.append(x)
+
+    def pop(self):
+        """
+        :rtype: nothing
+        """
+        if not self.empty():
+            self.stack.pop()
+
+    def top(self):
+        """
+        :rtype: int
+        """
+
+        if not self.empty():
+            return self.stack[-1]
+        else:
+            return None
+
+    def empty(self):
+        """
+        :rtype: bool
+        """
+        return len(self.stack) == 0
