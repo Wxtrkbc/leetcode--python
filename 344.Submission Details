@@ -1,0 +1,21 @@
+# Runtime: 64 ms
+# class Solution(object):
+#     def reverseString(self, s):
+#         return s[::-1]
+
+
+# Runtime: 72 ms
+# class Solution(object):
+#     def reverseString(self, s):
+#         l = list(s)
+#         l.reverse()
+#         return ''.join(l)
+
+
+# Runtime: 160 ms
+class Solution(object):
+    def reverseString(self, s):
+        if len(s)<=1:
+            return s
+        n = len(s)
+        return self.reverseString(s[n//2:]) + self.reverseString(s[:n//2])  # 注意顺序
